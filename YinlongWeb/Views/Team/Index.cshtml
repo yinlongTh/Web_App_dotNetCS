@@ -1,0 +1,42 @@
+﻿@model IEnumerable<YinlongWeb.Models.TeamModel>
+
+    <h3>TEAM</h3>
+    <p> <a href="https://ylwebapp.azurewebsites.net/api1">Get JSON file</a></p>
+
+<div class="container d-flex flex-wrap"> <!-- Create container around this html from bootstrap doc -->
+
+    @foreach(var item in Model)
+{
+        if (item.Id == 1)
+        {
+            <div class="card" style="width: 18rem;">
+   <img src="https://ylblob.blob.core.windows.net/ylwebsource/Prof.jpg" class="card-img-top" alt="..."> 
+   <div class="card-body">
+     <h5 class="card-title">@item.Name</h5>
+     <p class="card-text">Position : @item.Position</p>
+     <p class="card-text">Country : @item.Country</p>
+     <a href="/Team/ShowDetails/@item.Id" class="btn btn-dark">Details</a>
+
+   </div>
+            </div>
+        }
+        else
+        {
+            string numstr = (item.Id).ToString();
+            string links = "https://ylblob.blob.core.windows.net/ylwebsource/mem" + numstr + ".jpg";
+            <div class="card" style="width: 18rem;">
+   <img src="@links" class="card-img-top" alt="..."> 
+   <div class="card-body">
+     <h5 class="card-title">@item.Name</h5>
+     <p class="card-text">Position : @item.Position</p>
+     <p class="card-text">Country : @item.Country</p>
+     <a href="/Team/ShowDetails/@item.Id" class="btn btn-dark">Details</a>
+
+   </div>
+ </div>
+        }
+
+ }
+ <br>
+ <p>Our team member pictures are generated from https://pravatar.cc/</p>
+</div>

@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "What is ETL?";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p> 	&nbsp; ETL is a three-phase process where data is Extracted from original sources, Transformed and Loaded into an output repository.<br>
+Microsoft Azure provides great tools to process ETLs on cloud (Azure Data Factory & Azure Synapse Pipelines). <br>
+<br>
+	&nbsp; The following is an example of using Azure Data Factory to perform loading data from Azure blob storage which contains XML file, using Tranformations to clean, aggragate data into Azure SQL server (Relational Database Service).
+Then Finding some insight with Microsoft powerful tool for data visualization "Power BI"
+</p>
+<br>
+<p>Tools<ul>
+  <li>Data source : <a href="https://www.the-numbers.com/movies">Web Source</a>,  <a href="https://github.com/MarczakIO/azure4everyone-samples">CSV Sample Source</a></li>
+  <li>Database Output : Azure Storage Blob</li>
+  <li>Pipeline : Azure Data factory (V2)</li>
+  <li>Database Input : Azure SQL database</li>
+  <li>Analysis tool : Microsoft Power BI</li>
+</ul></p>
+
+<h6>1. Source file (CSV)</h6>
+<p>&nbsp; The information of movies since 1899 to 2022 stored in Azure Storage Blob</p><br>
+
+<img src="https://ylblob.blob.core.windows.net/ylwebsource/movieOrigin.png" style="width:70%" alt="Avatar" >
+<p></p><br>
+
+<h6>2. Pipeline</h6>
+<p>&nbsp; Using Azure Data factory (V2) loads CSV source file to extract years out of "title" column before loading into Azure SQL database</p><br>
+ <img src="https://ylblob.blob.core.windows.net/ylwebsource/DataFlow.png" style="width:100%" alt="Avatar">
+<p></p><br>
+
+<h6>3. Output data in SQL Database</h6>
+<p>&nbsp; New transformed data in the SQL Database with new "year" column</p><br>
+
+<img src="https://ylblob.blob.core.windows.net/ylwebsource/cleanedtb.png" style="width:70%" alt="Avatar">
+<p></p><br>
+
+<h6>4. Data Visualization</h6>
+<p>&nbsp; Importing Data from SQL Database to make visualizations with Microsoft Power BI to see the trend of movie production growing each year and the distribution of movie production according to countries</p><br>
+<br>
+<img src="https://ylblob.blob.core.windows.net/ylwebsource/bipic.png" style="width:90%" alt="Avatar">
+<p></p><br>
+<p>&nbsp; Due to Power BI license, I am only able to show the picture of Power BI dashboard. Otherwise Embeding the dashboard to the website directly would give users more options to visualize the data.</p>
+        
+          

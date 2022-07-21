@@ -1,0 +1,29 @@
+﻿@model YinlongWeb.Models.UserModel
+
+<div>
+    <h4>Welcome! @Model.UserName</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd class = "col-sm-10">
+          <!-- @Html.DisplayFor(model => model.Id) --> 
+          
+          <!-- OR -->
+
+          @Model.Id
+
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.UserName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">logout</a>
+</div>
